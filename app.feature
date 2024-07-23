@@ -13,7 +13,7 @@ Feature: Image Registration
     Given I am on the image registration page
     When I enter "Alien BR" in the title field
     And I enter "https://cdn.mos.cms.futurecdn.net/eM9EvWyDxXcnQTTyH8c8p5-1200-80.jpg" in the URL field
-    When I hit enter to submit the form
+    Then I hit enter to submit the form
     Then I should see a check icon in the title field
     Then I should see a check icon in the imageUrl field
     And the list of registered images should be updated with the new item
