@@ -48,7 +48,9 @@ describe('Image Registration', () => {
     it(`Then I should see "Please type a title for the image" message above the title field`, () => {
       registerForm.elements.titleFeedback().should('contains.text', 'Please type a title for the image')
     })
-    it(`And I should see "Please type a valid URL" message above the imageUrl field`)
+    it(`And I should see "Please type a valid URL" message above the imageUrl field`, () => {
+      registerForm.elements.urlFeedback().should('contains.text', 'Please type a valid URL')
+    })
     it(`And I should see an exclamation icon in the title and URL fields`)
     
   })
