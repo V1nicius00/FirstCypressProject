@@ -4,7 +4,9 @@ describe('Image Registration', () => {
       cy.clearAllLocalStorage()
     })
 
-    it('Given I am on the image registration page')
+    it('Given I am on the image registration page', () => {
+        cy.visit('/')
+    })
     it(`When I enter "Alien BR" in the title field`)
     it(`Then I should see a check icon in the title field`)
     it(`When I enter "https://cdn.mos.cms.futurecdn.net/eM9EvWyDxXcnQTTyH8c8p5-1200-80.jpg" in the URL field`)
