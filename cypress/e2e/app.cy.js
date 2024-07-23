@@ -1,3 +1,13 @@
+class RegisterForm {
+  elements = {
+    titleInput: () => cy.get('#title'),
+    titleFeedback: () => cy.get('#titleFeedback'),
+    imageUrlInput: () => cy.get('#imageUrl'),
+    urlFeedback: () => cy.get('#urlFeedback'),
+    submitBtn: () => cy.get('#btnSubmit')
+  }
+}
+
 describe('Image Registration', () => {
   describe('Submitting an image with invalid inputs', () => {
 
