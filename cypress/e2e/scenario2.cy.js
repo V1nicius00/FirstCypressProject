@@ -1,17 +1,20 @@
 class RegisterForm {
     elements = {
         titleInput: () => cy.get('#title'),
-        imageUrlInput: () => cy.get('#imageUrl')
+        imageUrlInput: () => cy.get('#imageUrl'),
+        submitButton: () => cy.get('#btnSubmit')
     }
 
     typeTitle(text) {
         if(!text) return;
         this.elements.titleInput().type(text)
     }
-
     typeImageUrl(text) {
         if(!text) return;
         this.elements.imageUrlInput().type(text)
+    }
+    submitButton() {
+        this.elements.submitButton().click()
     }
 }
 
@@ -19,7 +22,7 @@ const registerForm = new RegisterForm()
 
 describe('Image Registration', () => {
   describe('Submitting an image with valid inputs using enter key', () => {
-    after(() => {
+    before(() => {
       cy.clearAllLocalStorage()
     })
 
@@ -37,10 +40,10 @@ describe('Image Registration', () => {
     it(`And I enter "${input.imageUrl}" in the URL field`, () => {
         registerForm.typeImageUrl(input.imageUrl)
     })
-    it(`Then I hit enter to submit the form`)
-    it(`Then I should see a check icon in the title field`)
-    it(`Then I should see a check icon in the imageUrl field`)
-    it(`And the list of registered images should be updated with the new item`)
+    it(`Then I hit enter to submit the form`, () => {
+        registerForm.submitButton()
+    })
+    it(`Then the list of registered images should be updated with the new item`)
     it(`And the new item should be stored in the localStorage`)
     it(`Then The inputs should be cleared`)
     
