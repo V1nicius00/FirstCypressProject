@@ -35,7 +35,9 @@ describe('Image Registration', () => {
     it(`When I enter "${input.title}" in the title field`, () => {
       registerForm.typeTitle(input.title)
     })
-    it(`When I enter "${input.url}" in the Url field`)
+    it(`When I enter "${input.url}" in the Url field`, () => {
+      registerForm.typeUrl(input.url)
+    })
     it(`Then I click the submit button`)
     it(`Then I should see "Please type a title for the image" message above the title field`)
     it(`And I should see "Please type a valid URL" message above the imageUrl field`)
