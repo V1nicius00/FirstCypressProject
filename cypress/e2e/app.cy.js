@@ -16,6 +16,10 @@ class RegisterForm {
     if(!text) return;
     this.elements.imageUrlInput().type(text)
   }
+
+  submitButton() {
+    this.elements.submitBtn().click()
+  }
 }
 
 const registerForm = new RegisterForm()
@@ -38,7 +42,9 @@ describe('Image Registration', () => {
     it(`When I enter "${input.url}" in the Url field`, () => {
       registerForm.typeUrl(input.url)
     })
-    it(`Then I click the submit button`)
+    it(`Then I click the submit button`, () => {
+      registerForm.submitButton()
+    })
     it(`Then I should see "Please type a title for the image" message above the title field`)
     it(`And I should see "Please type a valid URL" message above the imageUrl field`)
     it(`And I should see an exclamation icon in the title and URL fields`)
