@@ -32,7 +32,9 @@ describe('Image Registration', () => {
       cy.visit('/')
     })
 
-    it(`When I enter "${input.title}" in the title field`)
+    it(`When I enter "${input.title}" in the title field`, () => {
+      registerForm.typeTitle(input.title)
+    })
     it(`When I enter "${input.url}" in the Url field`)
     it(`Then I click the submit button`)
     it(`Then I should see "Please type a title for the image" message above the title field`)
