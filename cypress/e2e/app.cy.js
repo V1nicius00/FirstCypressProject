@@ -9,12 +9,12 @@ class RegisterForm {
 
   typeTitle(text) {
     if(!text) return;
-    this.elements.titleInput.type(text)
+    this.elements.titleInput().type(text)
   }
 
   typeUrl(text) {
     if(!text) return;
-    this.elements.imageUrlInput.type(text)
+    this.elements.imageUrlInput().type(text)
   }
 }
 
