@@ -1,3 +1,5 @@
+import assert from 'assert'
+
 class RegisterForm {
   elements = {
     titleInput: () => cy.get('#title'),
@@ -23,6 +25,9 @@ class RegisterForm {
 }
 
 const registerForm = new RegisterForm()
+const colors = {
+  errors: 'rgb(220, 53, 69)'
+}
 
 describe('Image Registration', () => {
   describe('Submitting an image with invalid inputs', () => {
@@ -51,7 +56,13 @@ describe('Image Registration', () => {
     it(`And I should see "Please type a valid URL" message above the imageUrl field`, () => {
       registerForm.elements.urlFeedback().should('contains.text', 'Please type a valid URL')
     })
-    it(`And I should see an exclamation icon in the title and URL fields`)
+    it(`And I should see an exclamation icon in the title and URL fields`, () => {
+      registerForm.elements.titleInput().should(([element]) => {
+        const styles = window.getComputedStyle(element)
+        const border = styles.getPropertyValue('border-right-color')
+        assert.strictEqual(border, colors.errors)
+      })
+    })
     
   })
 
