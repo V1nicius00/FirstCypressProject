@@ -6,7 +6,19 @@ class RegisterForm {
     urlFeedback: () => cy.get('#urlFeedback'),
     submitBtn: () => cy.get('#btnSubmit')
   }
+
+  typeTitle(text) {
+    if(!text) return;
+    this.elements.titleInput.type(text)
+  }
+
+  typeUrl(text) {
+    if(!text) return;
+    this.elements.imageUrlInput.type(text)
+  }
 }
+
+const registerForm = new RegisterForm()
 
 describe('Image Registration', () => {
   describe('Submitting an image with invalid inputs', () => {
