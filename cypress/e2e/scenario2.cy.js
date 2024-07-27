@@ -46,7 +46,13 @@ describe('Image Registration', () => {
     it(`Then the list of registered images should be updated with the new item`, () => {
         cy.get(':nth-child(4) > .card')
     })
-    it(`Then The inputs should be cleared`)
+    // it(`And the new item should be stored in the localStorage`, () => {
+
+    // })
+    it(`Then The inputs should be cleared`,() => {
+        registerForm.elements.titleInput().should('have.value', '')
+        registerForm.elements.imageUrlInput().should('have.value', '')
+    })
     
   })
 
