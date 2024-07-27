@@ -17,6 +17,9 @@ describe('Refreshing the page', () => {
           cy.get('#imageUrl').type(input.imageUrl)
           cy.get('#btnSubmit').click()
       })
+      it(`When I refresh the page`,() => {
+          cy.reload()
+      })
       
     })
   
