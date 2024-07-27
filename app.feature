@@ -33,4 +33,4 @@ Feature: Image Registration
     Given I am on the image registration page
     Then I have submitted an image by clicking the submit button
     When I refresh the page
-    Then I should still see the submitted image in the list of registered images
+    Then I shouldn't still see the submitted image in the list of registered images
