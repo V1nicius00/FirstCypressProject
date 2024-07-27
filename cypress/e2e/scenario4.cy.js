@@ -12,6 +12,11 @@ describe('Refreshing the page', () => {
       it('Given I am on the image registration page', () => {
           cy.visit('/')
       })
+      it(`Then I have submitted an image by clicking the submit button`, () => {
+          cy.get('#title').type(input.title)
+          cy.get('#imageUrl').type(input.imageUrl)
+          cy.get('#btnSubmit').click()
+      })
       
     })
   
