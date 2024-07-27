@@ -20,6 +20,9 @@ describe('Refreshing the page', () => {
       it(`When I refresh the page`,() => {
           cy.reload()
       })
+      it(`Then I shouldn't still see the submitted image in the list of registered images`, () => {
+          cy.get(':nth-child(4) > .card').should('not.exist')
+      });
       
     })
   
