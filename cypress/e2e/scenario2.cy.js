@@ -43,8 +43,9 @@ describe('Image Registration', () => {
     it(`Then I hit enter to submit the form`, () => {
         registerForm.submitButton()
     })
-    it(`Then the list of registered images should be updated with the new item`)
-    it(`And the new item should be stored in the localStorage`)
+    it(`Then the list of registered images should be updated with the new item`, () => {
+        cy.get(':nth-child(4) > .card')
+    })
     it(`Then The inputs should be cleared`)
     
   })
